@@ -46,7 +46,10 @@ class SendUserToMailchimp extends Command
         {
             $this->info($user->name);
 
-            Newsletter::subscribe($user->email, ['FNAME'=>$user->name, 'LNAME'=>$user->surname]);
+            if($user->email !== 'admin@admin.com')
+            {
+                Newsletter::subscribe($user->email, ['FNAME'=>$user->name, 'LNAME'=>$user->surname]);
+            }
 
             $user->subscribe_status = true;
             $user->syncdate = date('Y-m-d H:i:s');
