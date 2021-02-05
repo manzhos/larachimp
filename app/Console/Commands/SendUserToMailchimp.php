@@ -44,10 +44,10 @@ class SendUserToMailchimp extends Command
 
         foreach ($users as $user)
         {
-            $this->info($user->name);
-
-            if($user->email !== 'admin@admin.com')
+            if($user->email != 'admin@admin.com')
+			//отправляем всех кроме Администратора
             {
+				$this->info($user->name);
                 Newsletter::subscribe($user->email, ['FNAME'=>$user->name, 'LNAME'=>$user->surname]);
             }
 
