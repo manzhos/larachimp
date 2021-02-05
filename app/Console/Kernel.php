@@ -2,6 +2,9 @@
 
 namespace App\Console;
 
+use App\Console\Commands\CreateAdmin;
+use App\Console\Commands\SendUserToMailchimp;
+use App\Console\Commands\UpdateUserStatusFromMailchimp;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,8 +16,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\SendUserToMailchimp::class,
-        \App\Console\Commands\UpdateUserStatusFromMailchimp::class
+        SendUserToMailchimp::class,
+        UpdateUserStatusFromMailchimp::class,
+        CreateAdmin::class
     ];
 
     /**
