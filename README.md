@@ -3,6 +3,8 @@
 
 Клонировать репозиторий можно по ссылке - https://github.com/manzhos/larachimp.git 
 
+
+
 ## Конфигурация
 
 Проект клонируется вместе с файлом .env - в нем прописаны ключи для Milchimp.
@@ -24,6 +26,7 @@ DB_PASSWORD=root
          ^^^^
 
 
+
 ## Консоль
 
 Запускаем
@@ -42,6 +45,7 @@ php artisan db:seed
 composer install && php artisan migrate && php artisan create:admin && php artisan db:seed
 
 
+
 ## Консольные команды
 
 Для отправки всех пользователей в список Mailchimp: 
@@ -54,7 +58,8 @@ php artisan mailchimp:updateuser
 php artisan schedule:work
 
 
-### Mailchimp
+
+## Mailchimp
 
 Аккаунт на Mailchimp (mailchimp.com)
 Логин:  larachimp_Q
@@ -67,12 +72,10 @@ larachimp@tutanota.com
 recovery key: 890b9dfb5fdb893e9746776b3601830e67af6e60626cea48aca5586a46de002e
 
 
+
 ## Браузер
 
-В консоли из папки public (тогда можно будет не указывать порт в адресной строке браузера)
-php -S 127.0.0.1:80
-
-В браузере переходим localhost
+php artisan serve
 
 Данные для доступа:
 Логин:  admin@admin.com
