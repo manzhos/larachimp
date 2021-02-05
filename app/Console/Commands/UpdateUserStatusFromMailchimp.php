@@ -44,7 +44,7 @@ class UpdateUserStatusFromMailchimp extends Command
         foreach ($users as $user)
         {
             $this->info($user->name);
-            if(Newsletter::hasMember($user->email))
+            if($user->email != 'admin@admin.com')
             {
                 $user->subscribe_status = Newsletter::isSubscribed($user->email);
                 $user->syncdate = date('Y-m-d H:i:s');
@@ -60,7 +60,7 @@ class UpdateUserStatusFromMailchimp extends Command
             }
             else
             {
-                $this->info('The user does not present in Mailchimp list.');
+                $this->info('Administrator does not present in Mailchimp list.');
             }
         }
 
